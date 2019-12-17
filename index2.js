@@ -1,8 +1,8 @@
 "use strict";
 
-const NpsApiKey = "9WM6xhhATZ9TowDYuhGGFiB5nRGPLcRtSKCbc9MZ";
+const NpsApiKey = "Add Key";
 const NpsSearchURL = "https://developer.nps.gov/api/v1/parks";
-const GoogleApiKey = "AIzaSyDWl7qyVdWeTZeOUmsVpBXM9rQcS9kFbRw";
+const GoogleApiKey = "Add Key";
 const GoogleGeocodeURL = "https://maps.googleapis.com/maps/api/geocode/json";
 
 function formatQueryParams(params) {
