@@ -16,7 +16,7 @@ function displayResults(responseJson) {
   $("#results-list").empty();
   for (let i = 0; i < responseJson.data.length; i++){
     $("#results-list").append(
-      `<li><h3>${responseJson.data[i].fullName}</h3>
+      `<li><h3>${responseJson.data[i].fullName}, ${responseJson.data[i].states}</h3>
       <p>${responseJson.data[i].designation}</p>
       <p>${responseJson.data[i].description}</p>
       <p><a href="${responseJson.data[i].url}">${responseJson.data[i].url}</a></p>
@@ -25,10 +25,11 @@ function displayResults(responseJson) {
   $("#results").removeClass("hidden");
 }
 
-function getParkDetails(state, limit=10) {
+function getParkDetails(newState, limit=10) {
+
   const NpsParams = {
     api_key: NpsApiKey,
-    stateCode: state,
+    stateCode: newState,
     limit
   };
   const NpsQueryString = formatQueryParams(NpsParams)
@@ -50,9 +51,12 @@ function getParkDetails(state, limit=10) {
 function watchForm() {
   $("form").submit(event => {
     event.preventDefault();
-    const state = $("#js-state-code").val();
+    const state = $("#js-state-searches").val();
     const limit = $("#js-max-results").val();
-    getParkDetails(state, limit);
+    
+    let newState = state;
+    newState = state.replace(/\s/g, "");
+    getParkDetails(newState, limit);
   });
 }
 
