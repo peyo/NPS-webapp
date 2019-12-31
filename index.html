@@ -16,7 +16,7 @@
             <label for="search-term">State [Make multiple states or single state searches, like: "NY, CA" or just "NY". Without quotes.]</label>
                 <input type="text" name="state-search" id="js-state-searches" placeholder="Two letter state code"><br>
             <label for="max-results">Maximum results to return</label>
-                <input type="number" name="max-results" id="js-max-results" value="10"><br>
+                <input type="number" name="max-results" id="js-max-results" value="10" min="1"><br>
                 <input type="submit" value="Go!">
         </form>
         <p id="js-error-message" class="error-message"></p>
